@@ -6,5 +6,5 @@ A starter project including full setup for Jekyll, GulpJS, SASS & BrowserSync wi
 For more information contact me:
 
 Jeffrey Herrera    
-[email](mailto:herrera.jeffrey@gmail.com)
+[email](mailto:herrera.jeffrey@gmail.com) | 
 [twitter](http://www.twitter.com/_isthatjeff)
