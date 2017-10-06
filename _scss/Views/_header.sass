@@ -1,0 +1,40 @@
+.site__header
+	position: relative
+	z-index: 1
+
+	.container
+		padding: $spacing 0
+		display: flex
+		flex-direction: row
+		justify-content: center
+		align-items: center
+
+		+media($s)
+			justify-content: flex-start
+
+	&--title
+		margin: 0
+
+		+fluid-type(20.16px, 23.04px)
+
+		a
+			color: black
+
+.site__title
+	text-transform: uppercase
+	line-height: 1em
+	position: fixed
+	animation: title_float 2s ease infinite
+	font-size: 10px
+	letter-spacing: 1em
+
+	&--left
+		bottom: 17%
+		transform-origin: center center
+		transform: translateX(-48%) rotate(-90deg)
+
+	&--right
+		top: 18%
+		right: 0
+		transform-origin: center center
+		transform: translateX(48%) rotate(90deg)

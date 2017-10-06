@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+{% if page.background %}
+<body style="background-image: url('{{page.background}}')">
+{% else %}
+<body>
+{% endif %}
+
+	<div class="site">
+
+		{% include header.html %}
+
+		<main class="site__body">
+
+			<div class="page container {{ page.title | slugify }}">
+				{% for lyric in site.lyrics %}
+				<a href="{{ lyric.url }}" class="lyric" style="background-image: url('{{ lyric.cover }}')">
+					<span class="lyric__overlay"></span>
+					<h1 class="lyric__title">{{ lyric.title }}</h1>
+				</a>
+				{% endfor %}
+			</div>
+
+		</main>
+
+
+		{% include footer.html %}
+
+	</div>
+
+	{% include scripts.html %}
+
+</body>
+
+</html>

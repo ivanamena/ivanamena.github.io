@@ -1,0 +1,60 @@
+// Grid
+
+$grid-gutter: $spacing / 2
+
+.small-container
+	width: 550px
+	max-width: 100%
+	display: flex
+	flex-wrap: wrap
+	justify-content: justify-between
+	margin: 0 auto
+	padding: $spacing / 2
+
+	+media($s)
+		margin: 0
+
+.container
+	width: 1200px
+	max-width: 100%
+	display: flex
+	flex-wrap: wrap
+	justify-content: justify-between
+	margin: 0 auto
+	padding: $spacing / 2
+
+=column
+	+clearfix
+
+=full
+	width: 100%
+
+=one-fifth
+	width: calc(20% - $grid-gutter)
+
+=two-fifth
+	width: calc(40% - $grid-gutter)
+
+=three-fifth
+	width: calc(60% - $grid-gutter)
+
+=four-fifth
+	width: calc(80% - $grid-gutter)
+
+=one-fourth
+	width: calc(25% - $grid-gutter)
+
+=two-fourths
+	width: calc(50% - $grid-gutter)
+
+=three-fourths
+	width: calc(75% - $grid-gutter)
+
+=one-third
+	width: calc(33.333% - $grid-gutter)
+
+=two-third
+	width: calc(66.666% - $grid-gutter)
+
+=one-half
+	width: calc(50% - $grid-gutter)

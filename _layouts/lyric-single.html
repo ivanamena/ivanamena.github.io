@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+{% if page.background %}
+<body style="background-image: url('{{page.background}}')">
+{% else %}
+<body>
+{% endif %}
+
+	<div class="site">
+
+		{% include header.html %}
+
+		<main class="site__body lyrics__body">
+
+			<div class="page small-container lyrics__container">
+				<div class="lyrics">
+					<h4 class="page__title">{{ page.title }}</h4>
+					{{ content }}
+				</div>
+				<div class="lyrics__image"></div>
+			</div>
+
+		</main>
+
+
+		{% include footer.html %}
+
+	</div>
+
+	{% include scripts.html %}
+
+</body>
+
+</html>

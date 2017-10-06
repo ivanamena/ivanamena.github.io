@@ -1,0 +1,68 @@
+.site__footer
+	padding: ($spacing / 2) 0
+	position: fixed
+	left: 0
+	bottom: 0
+	width: 100%
+	pointer-events: none
+
+	+small-font-size
+
+	.container
+		display: flex
+		flex-direction: row
+		justify-content: center
+		align-items: center
+
+		+media($s)
+			justify-content: flex-start
+
+.ojo
+	display: block
+	width: 28px
+	height: 28px
+	margin: 8px
+	border-radius: 50%
+	position: relative
+
+	&:after
+		content: ''
+		display: block
+		width: 16px
+		height: 16px
+		border-radius: 50%
+		border: 2px solid #FFF
+		position: absolute
+		right: 4px
+		bottom: 4px
+		z-index: 1
+
+	&:before
+		content: ''
+		display: block
+		width: 8px
+		height: 8px
+		border-radius: 50%
+		position: absolute
+		right: 10px
+		bottom: 13px
+		z-index: 2
+		background-color: #222
+
+	&.ojo1
+		background-color: $c-ojopink
+
+		&:after
+			background-color: $c-ojogreen
+
+	&.ojo2
+		background-color: $c-ojogreen
+
+		&:after
+			background-color: $c-ojoblue
+
+	&.ojo3
+		background-color: $c-ojoblue
+
+		&:after
+			background-color: $c-ojopink

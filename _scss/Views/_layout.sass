@@ -1,0 +1,32 @@
+body
+	background-color: $c-bg
+	background-size: cover
+	background-position: center
+	display: flex
+	flex-direction: column
+
+.header
+	flex: 0 0 auto
+
+.site__body
+	flex: 1 1 auto
+	margin: $spacing 0
+
+	+media($s)
+		margin: ($spacing / 2) 0
+
+.page__title,
+.post__title
+	+full
+	+base-font-size
+
+	text-transform: uppercase
+	letter-spacing: 0.1em
+	color: $c-ojogreen
+
+.lookbook-single
+	flex-direction: column
+	padding-bottom: $spacing * 3
+
+	img
+		flex: 0 0 auto

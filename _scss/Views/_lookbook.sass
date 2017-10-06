@@ -1,0 +1,71 @@
+.lookbooks
+	height: 100%
+	width: 100%
+	background-color: black
+	display: flex
+	flex-direction: row
+	align-items: center
+	overflow-x: scroll
+	overflow-y: hidden
+
+	+media($m)
+		flex-direction: column
+
+
+	&__body
+		position: fixed
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		padding: 0
+		margin: 0
+
+		+media($m)
+			position: relative
+
+.lookbook
+	display: block
+	background-color: black
+	width: 300px
+	height: 100%
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	position: relative
+	border: none
+	display: flex
+	justify-content: center
+	align-items: flex-end
+	padding: $spacing / 2
+	padding-bottom: $spacing * 3
+
+	+one-third
+
+	+media($m)
+		+full
+
+		justify-content: flex-end
+		align-items: center
+		padding: $spacing * 2
+
+
+	&:hover
+		.lookbook__overlay
+			opacity: 0.1
+
+	&__overlay
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: black
+		opacity: 0.75
+		transition: all
+
+	&__title
+		transform: rotate(9deg)
+		font-size: 24px
+		text-align: center

@@ -1,0 +1,36 @@
+name: Site Title
+title: KUBO Jekyll Starter
+email: jeff@kubonyc.com
+description: > # this means to ignore newlines until "baseurl:"
+  Description here
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.jeffreyherrera.com" # the base hostname & protocol for your site, e.g. http://example.com
+seo-image:
+
+twitter_username: jekyllrb
+github_username:  jekyll
+
+markdown: redcarpet
+highlighter: pygments # or rouge or null
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+
+collections:
+  lookbooks:
+    output: true
+    permalink: /lookbooks/:title/
+  lyrics:
+    output: true
+    permalink: /lyrics/:title/
+    layout: lyric-single
+
+defaults:
+  - scope:
+      path: ""
+      type: lookbooks
+    values:
+        layout: lookbook-single
+  - scope:
+      path: ""
+      type: lyrics
+    values:
+        layout: lyric-single

@@ -1,0 +1,145 @@
+.close__button,
+.close__reopen,
+.close__checkbox
+	position: fixed
+	top: $spacing
+	right: $spacing
+	z-index: 5
+
+	+media($s)
+		top: auto
+		bottom: $spacing / 2
+		right: $spacing / 2
+
+.home
+	.video
+		width: 100%
+		max-height: 100%
+
+		&__container
+			position: absolute
+			top: 0
+			right: 0
+			width: 100%
+			height: 100%
+			overflow: hidden
+			display: flex
+			justify-content: center
+			align-items: center
+			transition: opacity 0.5s ease
+			background-color: black
+
+.face
+	display: block
+	position: fixed
+	top: 48%
+	left: 52.75%
+	animation: float 5s ease infinite
+	z-index: -1
+	opacity: 0.3
+	transform: translate(-50%, -50%)
+
+	+media($s)
+		left: 59%
+
+
+	img
+		width: auto
+		height: 100%
+
+.close
+	&__button
+		z-index: 2
+		display: block
+		height: 50px
+		width: 50px
+		pointer-events: none
+		transition: all 0.5s ease
+
+	&__reopen
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 50px
+		height: 50px
+		overflow: hidden
+		border: 1px solid white
+		transform: translateX(200%)
+		transition: all 0.5s ease
+		z-index: 2
+
+		p
+			font-size: 12px
+			text-align: center
+
+	&__checkbox
+		display: block
+		width: 50px
+		height: 50px
+		margin: $spacing
+		opacity: 0
+		z-index: 5
+		cursor: pointer
+
+		&:hover
+			& ~ .close__reopen
+				animation: bg-flash 0.5s ease infinite
+
+			& ~ .close__button
+				transform: rotate(90deg)
+
+		&:checked
+			& ~ .close__reopen
+				transform: translateX(0)
+
+			& ~ .close__button
+				transform: translateX(200%)
+
+			& ~ .video__container
+				opacity: 0
+				pointer-events: none
+
+	&__icon
+		display: block
+		width: 50px
+		height: 50px
+		pointer-events: none
+
+		&:before,
+		&:after
+			content: ''
+			display: block
+			height: 1px
+			width: 50px
+			transform: rotate(45deg) translateY(-50%) translateX(-50%)
+			background-color: #FFF
+			transform-origin: top left
+			position: absolute
+			top: 50%
+			left: 50%
+
+		&:before
+			transform: rotate(-45deg) translateY(-50%) translateX(-50%)
+
+@keyframes bg-flash
+	0%
+		background-color: $c-link
+
+	33.333%
+		background-color: $c-ojogreen
+
+	50%
+		background-color: $c-ojoblue
+
+	66.666%
+		background-color: $c-ojopink
+
+@keyframes float
+	0%
+		transform: translate(-50%, -50%)
+
+	50%
+		transform: translate(-50%, -54%)
+
+	0%
+		transform: translate(-50%, -50%)

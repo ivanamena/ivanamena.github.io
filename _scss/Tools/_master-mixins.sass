@@ -1,0 +1,304 @@
+/**
+ *
+ * Jeffrey Herrera's Opinionated SASS Mixins
+ * Twitter - IsThatJeff
+ * Website - jeffreyherrera.com
+ *
+ */
+
+
+/* ===============================
+ *        Custom Helpers         =
+ * ===============================*/
+
+
+/*----------  Alignment  ----------*/
+
+=centered()
+  margin-left: auto
+  margin-right: auto
+
+=left()
+  float: left
+
+=right()
+  float: right
+
+=text-l()
+  text-align: left
+
+=text-r()
+  text-align: right
+
+
+/*----------  Clearfix  ----------*/
+
+=clearfix()
+  &:before,
+  &:after
+      content: ""
+      display: table
+  &:after
+    clear: both
+
+
+/*----------  Visual  ----------*/
+
+=list-reset()
+  padding: 0
+  list-style: none
+
+=b-0()
+  border: none
+
+=b($border-color: #CCC)
+  border: 1px solid $border-color
+
+=b-t($border-color: #CCC)
+  border-top: 1px solid $border-color
+
+=b-r($border-color: #CCC)
+  border-right: 1px solid $border-color
+
+=b-b($border-color: #CCC)
+  border-bottom: 1px solid $border-color
+
+=b-l($border-color: #CCC)
+  border-left: 1px solid $border-color
+
+=no-decoration()
+  text-decoration: none
+
+=ease($time: .15s)
+  transition: all $time ease-in-out
+
+=button-reset()
+  background: none
+  border: 0
+  color: inherit
+  font: inherit
+  line-height: normal
+  overflow: visible
+  padding: 0
+  -webkit-appearance: button
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  cursor: pointer
+
+=input-reset()
+  border: none
+  outline: none
+
+=blur($blur-amount: 2px)
+  filter: blur($blur-amount)
+
+=grayscale($grayscale-amount: 100%)
+  filter: grayscale($grayscale-amount)
+
+=saturate($saturate-amount: 100%)
+  filter: saturate($saturate-amount)
+
+
+/*----------  Positioning  ----------*/
+
+=text-c()
+  text-align: center
+
+=fix()
+  position: fixed
+
+=rel()
+  position: relative
+
+=abs()
+  position: absolute
+
+=pin-tr()
+  top: 0
+  right: 0
+
+=pin-tl()
+  top: 0
+  left: 0
+
+=pin-bl()
+  bottom: 0
+  left: 0
+
+=pin-br()
+  bottom: 0
+  right: 0
+
+=pin-full()
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+=inline()
+  display: inline
+
+=block()
+  display: block
+
+=i-block()
+  display: inline-block
+
+=hidden()
+  display: none
+
+=visually-hidden()
+  margin: -1px
+  padding: 0
+  width: 1px
+  height: 1px
+  overflow: hidden
+  clip: rect(0 0 0 0)
+  clip: rect(0, 0, 0, 0)
+  position: absolute
+
+
+/*----------  Flexbox  ----------*/
+
+=flex()
+  display: flex
+
+=no-grow($size: auto)
+  flex: 0 0 $size
+
+=grow()
+  flex: 1 1 auto
+
+=flex-column()
+  flex-direction: column
+
+=flex-row()
+  flex-direction: row
+
+=flex-wrap()
+  flex-wrap: wrap
+
+=align-c()
+  align-items: center
+
+=align-start()
+  align-items: flex-start
+
+=align-end()
+  align-items: flex-end
+
+=align-stretch()
+  align-items: stretch
+
+=align-between()
+  align-content: space-between
+
+=align-around()
+  align-content: space-around
+
+=justify-c()
+  justify-content: center
+
+=justify-start()
+  justify-content: flex-start
+
+=justify-end()
+  justify-content: flex-end
+
+=justify-between()
+  justify-content: space-between
+
+=justify-around()
+  justify-content: space-around
+
+=self-end()
+  align-self: flex-end
+
+=self-start()
+  align-self: flex-start
+
+=self-stretch()
+  align-self: stretch
+
+
+/*----------  Spacing  ----------*/
+
+=m-0()
+  margin: 0
+
+=m-t-0()
+  margin-top: 0
+
+=m-b-0()
+  margin-bottom: 0
+
+=m-t($default-margin: 40px)
+  margin-top: $default-margin
+
+=m-r($default-margin: 40px)
+  margin-right: $default-margin
+
+=m-b($default-margin: 40px)
+  margin-bottom: $default-margin
+
+=m-l($default-margin: 40px)
+  margin-left: $default-margin
+
+=p-0()
+  padding: 0
+
+=p-t-0()
+  padding-top: 0
+
+=p-r-0()
+  padding-right: 0
+
+=p-b-0()
+  padding-bottom: 0
+
+=p-l-0()
+  padding-left: 0
+
+=p($default-padding: 40px)
+  padding: $default-padding
+
+=p-t($default-padding: 40px)
+  padding-top: $default-padding
+
+=p-r($default-padding: 40px)
+  padding-right: $default-padding
+
+=p-b($default-padding: 40px)
+  padding-bottom: $default-padding
+
+=p-l($default-padding: 40px)
+  padding-left: $default-padding
+
+
+/*----------  Responsive  ----------*/
+
+=fit()
+  max-width: 100%
+
+
+/*----------  Size  ----------*/
+
+=circle()
+  border-radius: 50%
+
+
+/*----------  Breakpoints  ----------*/
+
+$content-width: 800px
+$s: 640px
+$m: 1024px
+$l: 1440px
+$xl: 1440px
+
+=media($device)
+  @media screen and (max-width: $device)
+    @content
+
+
+/*=====  End of Custom Helpers  ======*/
